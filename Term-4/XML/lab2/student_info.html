@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Калькулятор</title>
+  <link rel="stylesheet" href="my_style.css">
+</head>
+
+<body>
+    
+  <footer id="upper_footer" style = "height: 50px; background-color: seagreen">
+    <div style = "display: flex; justify-content: center; gap: 130px">
+      <img src = "logo-logo.png" style = "height: 50px; width: 50px;" alt = "avatar">
+      <a href = "lab_goal.html" class = "footer_link">Информация о лабораторной работе</a>
+      <a href = "calculator.html" class = "footer_link">Калькулятор</a>
+      <a href = "student_info.html" class = "footer_link">Информация об авторе</a>
+    </div>
+    </footer>
+
+  <div style = "display: flex; flex-direction: row; justify-content: center; margin-top: 200px;">
+
+  <div id = "right_info" style="display: flex; flex-direction: column; justify-content: center;">
+    
+    <a href="https://github.com/Ikam213" class = "git-btn">Перейти на GitHub</a>
+    
+    <input type = "text" list = "options" style = "width: 240px; margin-bottom: 20px;">
+    <datalist id = "options">
+      <option value = "Светлая тема">
+      <option value = "Темная тема">
+    </datalist>
+    
+    <details>
+      <summary>Информация об авторе</summary>
+      <p>выполнил Афонин Иван Игоревич, студент группы ИУ5-42Б</p>
+    </details>
+    
+  </div>
+
+  </div>
+  
+  <script>
+    document.querySelector('input[list="options"]').addEventListener('change', function() {
+      localStorage.setItem("value", this.value);
+      location.reload();
+    });
+    if (localStorage.getItem("value") === "Светлая тема") {
+      document.body.style.backgroundColor = "#64a76b";
+      document.getElementById("upper_footer").style.backgroundColor = "seagreen";
+    }
+    else if (localStorage.getItem("value") === "Темная тема") {
+      document.body.style.backgroundColor = "darkblue";
+      document.getElementById("upper_footer").style.backgroundColor = "blue";
+    }
+    </script>
+
+  <footer id = "down_footer" style = "height: 30px; position: fixed; bottom: 0; width: 100%;">
+    <p style = "text-align: center; color: white; font-weight: bold;">МГТУ им. Н.Э. Баумана, 2025 © Все права защищены</p>
+  </footer>
+
+</body>
+</html>

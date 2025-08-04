@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Калькулятор</title>
+  <link rel="stylesheet" href="my_style.css">
+  <script type = "text/JavaScript" src = "script.js"></script>
+</head>
+
+<body>
+    
+  <footer id="upper_footer" style = "height: 50px; background-color: seagreen">
+    <div style = "display: flex; justify-content: center; gap: 130px">
+      <img src = "logo-logo.png" style = "height: 50px; width: 50px;" alt = "avatar">
+      <a href = "lab_goal.html" class = "footer_link">Информация о лабораторной работе</a>
+      <a href = "calculator.html" class = "footer_link">Калькулятор</a>
+      <a href = "student_info.html" class = "footer_link">Информация об авторе</a>
+    </div>
+    </footer>
+
+  <div style = "display: flex; flex-direction: row; justify-content: center; margin-top: 80px;">
+
+  <div class = "calc_body">
+
+  <div class = "calc">
+
+    <div id="result" class="result">
+      0
+    </div>
+
+    <div>
+      <div>  
+        <button id="btn_digit_A" class="my-btn secondary">A</button> 
+        <button id="btn_op_clear" class="my-btn secondary">C</button>    
+        <button id="btn_op_sign" class="my-btn secondary">+/-</button>
+        <button id="btn_op_percent" class="my-btn secondary">%</button>
+        <button id="btn_op_backspace" class="my-btn primary">␡</button>
+      </div>
+
+      <div>  
+        <button id="btn_digit_B" class="my-btn secondary">B</button> 
+        <button id="btn_op_left_shift" class="my-btn secondary"><<</button>    
+        <button id="btn_op_right_shift" class="my-btn secondary">>></button>
+        <button id="btn_op_change_system" class="my-btn secondary">HEX</button>
+        <button id="btn_op_div" class="my-btn primary">/</button>
+        
+      </div>
+
+      <div>
+        <button id="btn_digit_C" class="my-btn secondary">C</button> 
+        <button id="btn_digit_7" class="my-btn">7</button>
+        <button id="btn_digit_8" class="my-btn">8</button>
+        <button id="btn_digit_9" class="my-btn">9</button>
+        <button id="btn_op_mult" class="my-btn primary">x</button>
+      </div>
+
+      <div>
+        <button id="btn_digit_D" class="my-btn secondary">D</button> 
+        <button id="btn_digit_4" class="my-btn">4</button>
+        <button id="btn_digit_5" class="my-btn">5</button>
+        <button id="btn_digit_6" class="my-btn">6</button>
+        <button id="btn_op_minus" class="my-btn primary">-</button>
+      </div>
+
+      <div>
+        <button id="btn_digit_E" class="my-btn secondary">E</button> 
+        <button id="btn_digit_1" class="my-btn">1</button>
+        <button id="btn_digit_2" class="my-btn">2</button>
+        <button id="btn_digit_3" class="my-btn">3</button>
+        <button id="btn_op_plus" class="my-btn primary">+</button>
+      </div>
+
+      <div>
+        <button id="btn_digit_F" class="my-btn secondary">F</button> 
+        <button id="btn_digit_0" class="my-btn">0</button>
+        <button id="btn_digit_dot" class="my-btn">.</button>
+        <button id="btn_op_equal" class="my-btn primary execute">=</button>
+      </div>
+    </div>
+    
+  </div>
+
+    <div style = "color: white; font-size: large; text-align: center;">
+      <h3>ЛР выполнена Афониным Иваном Игоревичем</h3>
+    </div>
+
+  </div>
+
+  <input type = "text" list = "options" style = "width: 240px; margin-bottom: 20px; display: none;">
+    <datalist id = "options">
+      <option value = "Светлая тема">
+      <option value = "Темная тема">
+    </datalist>
+
+  <script>
+
+    document.querySelector('input[list="options"]').addEventListener('change', function() {
+      localStorage.setItem("value", this.value);
+      location.reload();
+    });
+    if (localStorage.getItem("value") === "Светлая тема") {
+      document.body.style.backgroundColor = "#64a76b";
+      document.getElementById("upper_footer").style.backgroundColor = "seagreen";
+    }
+    else if (localStorage.getItem("value") === "Темная тема") {
+      document.body.style.backgroundColor = "darkblue";
+      document.getElementById("upper_footer").style.backgroundColor = "blue";
+    }
+  
+  </script>
+
+  <footer id = "down_footer" style = "height: 30px; position: fixed; bottom: 0; width: 100%;">
+    <p style = "text-align: center; color: white; font-weight: bold;">МГТУ им. Н.Э. Баумана, 2025 © Все права защищены</p>
+  </footer>
+
+</body>
+</html>
